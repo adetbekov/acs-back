@@ -21,7 +21,7 @@ def upload_location(instance,filename):
 
 class Post(models.Model):
 	title = models.CharField(max_length=225, blank=False)
-	title_slug = models.SlugField(unique=True, null=True, blank=True)
+	title_slug = models.SlugField(max_length=225, unique=True, null=True, blank=True)
 	category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.DO_NOTHING)
 	author = models.ForeignKey(User, default=1, on_delete=models.DO_NOTHING)
 	language = models.ForeignKey(Locale, null=True, blank=True, on_delete=models.DO_NOTHING)
